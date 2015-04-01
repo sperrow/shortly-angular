@@ -15,7 +15,16 @@ angular.module('shortly', [
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
+    .when('/',{ //index links
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
+
+    })
+    .when('/shorten',{
+
+    })
     // Your code here
+    //may need index
 
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls

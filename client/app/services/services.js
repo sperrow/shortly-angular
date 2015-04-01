@@ -2,6 +2,36 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
+
+  var getLinks = function(){
+    return  $http({
+      method: 'GET',
+      url: '/api/links'
+    })
+    .then(function (resp){
+      console.log("Response from factory: ", resp.data);
+      return resp.data;
+    });
+  };
+
+
+ // Our data will look like this:
+ // visits: Number,
+ // link: String,
+ // title: String,
+ // code: String,
+ // base_url: String,
+ // url: String
+
+
+  // url: url,
+  // visits: 0,
+  // base_url: req.headers.origin,
+  // title: title
+  return{
+    getLinks:getLinks
+  };
+
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
