@@ -35,6 +35,7 @@ module.exports = {
         create,
         newUser;
 
+
     var findOne = Q.nbind(User.findOne, User);
 
     // check to see if user already exists

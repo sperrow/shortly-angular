@@ -23,7 +23,6 @@ angular.module('shortly', [
     .when('/shorten',{
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
-
     })
     // Your code here
     //may need index

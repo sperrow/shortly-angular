@@ -1,4 +1,9 @@
-<div id='container'  >
-<ul><li > </li><ul>  <!--not certain on the path yet ng-repeat ="link.data"-->
+<div id='container'>
+  <!--not certain on the path yet ng-repeat ="link.data"-->
   <!-- Your html here -->
+
+  <ul><li ng-repeat="link in data.links">
+    <h1>{{link.title}} {{link.url}} visits: {{link.visits}}</h1>
+    <a href={{link.base_url}}/{{link.code}} target="_blank">{{link.base_url}}/{{link.code}}</a>
+  </li></ul>
 </div>

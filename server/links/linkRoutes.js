@@ -13,6 +13,7 @@ module.exports = function (app) {
     .get(linksController.allLinks)
     .post(linksController.newLink);
 
-  app.get('/:code', linksController.navToLink);
+  app.get('/:code', linksController.navToLink);  //TODO: We are stopped here
+    //Shortened code is not re-directing correctly
 
 };
