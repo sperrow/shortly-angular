@@ -9,10 +9,23 @@ angular.module('shortly.services', [])
       url: '/api/links'
     })
     .then(function (resp){
-      console.log("Response from factory: ", resp.data);
+     // console.log("Response from factory: ", resp.data);
       return resp.data;
     });
   };
+
+  var addLink = function(url){
+    return  $http({
+      method: 'POST',
+      url: '/api/links',
+      data: url
+    })
+    .then(function (resp){
+      console.log("Response from addLink factory: ", resp);
+      return resp;
+    });
+
+  }
 
 
  // Our data will look like this:
@@ -29,7 +42,8 @@ angular.module('shortly.services', [])
   // base_url: req.headers.origin,
   // title: title
   return{
-    getLinks:getLinks
+    getLinks:getLinks,
+    addLink:addLink
   };
 
 })

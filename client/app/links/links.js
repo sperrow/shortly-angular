@@ -8,7 +8,7 @@ angular.module('shortly.links', [])
     Links.getLinks()
       .then(function(resp){
         $scope.data.links = resp;
-          console.log('data @ controller: ', $scope.data.links);
+      //    console.log('data @ controller: ', $scope.data.links);
       })
       .catch(function(error){
         console.log(error);
