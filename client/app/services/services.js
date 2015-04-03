@@ -9,7 +9,6 @@ angular.module('shortly.services', [])
       url: '/api/links'
     })
     .then(function (resp){
-     // console.log("Response from factory: ", resp.data);
       return resp.data;
     });
   };
@@ -21,31 +20,15 @@ angular.module('shortly.services', [])
       data: url
     })
     .then(function (resp){
-      console.log("Response from addLink factory: ", resp);
       return resp;
     });
 
   }
 
-
- // Our data will look like this:
- // visits: Number,
- // link: String,
- // title: String,
- // code: String,
- // base_url: String,
- // url: String
-
-
-  // url: url,
-  // visits: 0,
-  // base_url: req.headers.origin,
-  // title: title
-  return{
-    getLinks:getLinks,
-    addLink:addLink
+  return {
+    getLinks: getLinks,
+    addLink: addLink
   };
-
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
@@ -63,6 +46,9 @@ angular.module('shortly.services', [])
     })
     .then(function (resp) {
       return resp.data.token;
+    })
+    .catch(function (error) {
+      console.error(error);
     });
   };
 
@@ -74,6 +60,9 @@ angular.module('shortly.services', [])
     })
     .then(function (resp) {
       return resp.data.token;
+    })
+    .catch(function (error) {
+      console.error(error);
     });
   };
 

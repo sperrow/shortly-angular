@@ -1,10 +1,16 @@
-<div id='container' >
-  <!--not certain on the path yet ng-repeat ="link.data"-->
-  <!-- Your html here -->
+<div id='container'>
+  <div class="navigation">
+    <ul>
+      <li><a href="#/links" class="index">All links</a></li>
+      <li><a href="#/shorten" class="create">Shorten</a></li>
+      <li><a class="logout" ng-click='signout()'>Logout</a></li>
+    </ul>
+  </div>
   <form name="urlForm" ng-submit='addLink()'>
     <input type='text' ng-model='link.url'>
     <button>shorten link!</button>
   </form>
+  <h1 ng-model="link">{{link.url}}</h1>
 
 </div>
 

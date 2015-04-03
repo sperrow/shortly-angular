@@ -1,9 +1,13 @@
 <div id='signin'>
   <h1>signin</h1>
   <form name="signinForm" ng-submit='signin()'>
-    <input type='text'ng-model='user.username'>
+    <input type='text'ng-model='user.username'  ng-class="{'error': signinForm.$invalid && signinForm.$dirty}">
     <input type="password" ng-model='user.password'>
     <button>signin</button>
   </form>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+  <div ng-show="signinForm.user.$error.username && signinForm.$dirty" class="message">
+    <h2> Signin failed</h2>
+  </div>
 </div>
+

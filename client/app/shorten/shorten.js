@@ -1,26 +1,20 @@
 angular.module('shortly.shorten', [])
 
-.controller('ShortenController', function ($scope, $location, Links) {
+.controller('ShortenController', function ($scope, $location, Links, Auth) {
 
- $scope.link = {};
+  $scope.link = {};
 
   $scope.addLink = function() {
     Links.addLink($scope.link)
-      .then(function(resp){ //will look like newLink below
-        console.log("Resp from Link Controller: ", resp);
-
+      .then(function(resp){
+        $location.path('/');
       })
       .catch(function(error){
         console.log(error);
       });
   };
 
-
+  $scope.signout = function() {
+      Auth.signout();
+  };
 });
-
-
-// newLink = {
-//             url: url,
-//             visits: 0,
-//             base_url: req.headers.origin,
-//             title: title}
